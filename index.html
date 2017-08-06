@@ -1,0 +1,67 @@
+﻿<html>
+<head>
+	<title>Estadística</title>
+</head>
+<body>
+	<h1>Moda, media y mediana de los números</h1>
+<script>
+/*Ingresar datos*/
+alert("Se cuidadoso al ingresar los números");
+alert("El valor de la mediana y el orden será incorrecto si no ingresas números con la misma cantidad de cifras")
+ 	var pregunta = parseInt(prompt("¿Cuántos números desea ingresar?"));
+	var array= [];
+	for(var i=0; i < pregunta; i++){
+		array[i]= parseInt(prompt("Ingrese un número"));
+		var org = array.sort();	
+	}
+	var n= org.length;
+	document.write("Números ingresados "+array+".");
+	document.write("\nNúmeros en orden "+org+".");
+	alert("Los números estarán en orden sólo si ingresaste números de dos cifras")
+	/*Sumatoria*/
+	var suma=0;
+	for(var i=0;i<pregunta;i++) {
+		suma += array[i]
+	}
+		document.write("\nLa suma total es "+suma+".");
+
+	/*Promedio*/
+
+	var prom = suma / array.length;
+	document.write("\nEl promedio o media es "+prom+".");
+
+	/*Moda*/
+	var mode = function mode(arr) {
+	    var numMapping = {};
+	    var greatestFreq = 0;
+	    var mode;
+	    arr.forEach(function findMode(number) {
+	        numMapping[number] = (numMapping[number] || 0) + 1;
+
+	        if (greatestFreq < numMapping[number]) {
+	            greatestFreq = numMapping[number];
+	            mode = number;
+	        }
+	    });
+	    return +mode;
+	}
+	document.write("\nLa moda es: "+mode(array)+".");
+	alert("Este resultado de moda solo aplica si hay una unica moda, si hay más de una sólo aparecerá la primera.")
+
+	/*Mediana*/
+	if(n%2===0) {
+		var div1 = org.length/2;
+		div1 -= 1;
+		var div2 = div1 + 1;
+		var sumMedianaPar = array[div1] + array[div2];
+		var medianaPar = sumMedianaPar/2;
+		document.write("\nEl valor de la mediana es: "+medianaPar+".");
+	} else {
+		var formula = (n+1)/2;
+		var medianaImpar= array[formula-1];
+		document.write("\nEl valor de la mediana es: "+medianaImpar+".");
+	}
+
+</script>
+</body>
+</html>
