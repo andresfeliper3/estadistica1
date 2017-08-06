@@ -15,20 +15,20 @@ alert("El valor de la mediana y el orden será incorrecto si no ingresas número
 		var org = array.sort();	
 	}
 	var n= org.length;
-	document.write("Números ingresados "+array+".");
-	document.write("\nNúmeros en orden "+org+".");
+	document.write("Números ingresados "+array+".<br >");
+	document.write("\nNúmeros en orden "+org+".<br >");
 	alert("Los números estarán en orden sólo si ingresaste números de dos cifras")
 	/*Sumatoria*/
 	var suma=0;
 	for(var i=0;i<pregunta;i++) {
 		suma += array[i]
 	}
-		document.write("\nLa suma total es "+suma+".");
+		document.write("\nLa suma total es "+suma+".<br >");
 
 	/*Promedio*/
 
 	var prom = suma / array.length;
-	document.write("\nEl promedio o media es "+prom+".");
+	document.write("\nEl promedio o media es "+prom+".<br >");
 
 	/*Moda*/
 	var mode = function mode(arr) {
@@ -45,7 +45,7 @@ alert("El valor de la mediana y el orden será incorrecto si no ingresas número
 	    });
 	    return +mode;
 	}
-	document.write("\nLa moda es: "+mode(array)+".");
+	document.write("\nLa moda es: "+mode(array)+".<br >");
 	alert("Este resultado de moda solo aplica si hay una unica moda, si hay más de una sólo aparecerá la primera.")
 
 	/*Mediana*/
@@ -55,11 +55,11 @@ alert("El valor de la mediana y el orden será incorrecto si no ingresas número
 		var div2 = div1 + 1;
 		var sumMedianaPar = array[div1] + array[div2];
 		var medianaPar = sumMedianaPar/2;
-		document.write("\nEl valor de la mediana es: "+medianaPar+".");
+		document.write("\nEl valor de la mediana es: "+medianaPar+".<br >");
 	} else {
 		var formula = (n+1)/2;
 		var medianaImpar= array[formula-1];
-		document.write("\nEl valor de la mediana es: "+medianaImpar+".");
+		document.write("\nEl valor de la mediana es: "+medianaImpar+".<br >");
 	}
 
 </script>
